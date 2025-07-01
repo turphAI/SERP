@@ -88,20 +88,21 @@ export default function Home() {
               <CardContent className="flex-1 flex flex-col">
                 <div className="space-y-3">
                   {feature.versions.map((version) => (
-                    <div key={version.version} className="border rounded-lg p-3 hover:bg-gray-50 transition-colors">
+                    <Link 
+                      key={version.version} 
+                      href={version.href}
+                      className="block border rounded-lg p-3 hover:bg-gray-50 transition-colors cursor-pointer"
+                    >
                       <div className="flex items-center justify-between mb-2">
-                        <Link 
-                          href={version.href}
-                          className="font-medium text-blue-600 hover:text-blue-800 hover:underline"
-                        >
+                        <span className="font-medium text-blue-600">
                           {feature.name} {version.version}
-                        </Link>
+                        </span>
                         <Badge className={`text-xs ${getStatusColor(version.status)}`}>
                           {version.status}
                         </Badge>
                       </div>
                       <p className="text-xs text-gray-500">{version.description}</p>
-                    </div>
+                    </Link>
                   ))}
                 </div>
               </CardContent>
