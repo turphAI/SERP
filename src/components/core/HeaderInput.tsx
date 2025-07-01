@@ -1,6 +1,6 @@
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -11,7 +11,7 @@ export type HeaderInputProps = {
   defaultValue?: string;
 };
 
-export function HeaderInput({ onSmartSuggestOpen, onOpenResearch, defaultValue = "" }: HeaderInputProps) {
+function HeaderInputWithParams({ onSmartSuggestOpen, onOpenResearch, defaultValue = "" }: HeaderInputProps) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -87,6 +87,39 @@ export function HeaderInput({ onSmartSuggestOpen, onOpenResearch, defaultValue =
         <Image src="/sparkle.svg" alt="Sparkle" width={20} height={20} />
       </Button>
     </div>
+  );
+}
+
+export function HeaderInput(props: HeaderInputProps) {
+  return (
+    <Suspense fallback={
+      <div className="flex items-center w-full max-w-xl gap-2">
+        <div className="relative flex-1 min-w-0">
+          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">
+            <Search className="w-5 h-5" />
+          </span>
+          <Input
+            type="text"
+            placeholder="What would you like to know…"
+            className="pl-10"
+            aria-label="Search input"
+            disabled
+          />
+        </div>
+        <Button
+          variant="outline"
+          size="icon"
+          type="button"
+          disabled
+          aria-label="Open Research View"
+          className="p-2 rounded-md bg-white text-foreground"
+        >
+          <Image src="/sparkle.svg" alt="Sparkle" width={20} height={20} />
+        </Button>
+      </div>
+    }>
+      <HeaderInputWithParams {...props} />
+    </Suspense>
   );
 }
 
