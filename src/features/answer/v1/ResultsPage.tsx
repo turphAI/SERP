@@ -1,7 +1,10 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import Layout from '@/components/core/Layout';
+import BasicInput from '@/components/shared/BasicInput';
+import TabRow from '@/components/shared/TabRow';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
@@ -10,6 +13,19 @@ interface ResultsPageProps {
 }
 
 export default function ResultsPage({ searchQuery }: ResultsPageProps) {
+  const router = useRouter();
+  const [activeTab, setActiveTab] = useState('All');
+
+  const handleNewSearch = (query: string) => {
+    router.push(`/answer/v1/results?q=${encodeURIComponent(query)}`);
+  };
+
+  const handleTabChange = (tab: string) => {
+    setActiveTab(tab);
+    // In a real app, this would trigger a new search with the selected tab filter
+    console.log(`Tab changed to: ${tab}`);
+  };
+
   // Mock data - this will be replaced with real data later
   const answerCard = {
     title: "What is React?",
@@ -36,9 +52,23 @@ export default function ResultsPage({ searchQuery }: ResultsPageProps) {
   return (
     <Layout variant="results">
       <div className="max-w-4xl mx-auto">
+        {/* Search Input at top of results */}
+        <div className="mb-4 bg-white rounded-lg shadow p-6">
+          <BasicInput
+            value={searchQuery}
+            placeholder="Search for anything..."
+            onSearch={handleNewSearch}
+          />
+        </div>
+
+        {/* Tab Row outside the card */}
+        <div className="mb-6">
+          <TabRow onTabChange={handleTabChange} />
+        </div>
+
         <div className="mb-4">
           <p className="text-sm text-gray-600">
-            Search results for: <span className="font-medium">"{searchQuery}"</span>
+            Search results for: <span className="font-medium">&ldquo;{searchQuery}&rdquo;</span> in <span className="font-medium">{activeTab}</span>
           </p>
         </div>
 

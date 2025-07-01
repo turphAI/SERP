@@ -14,8 +14,7 @@ interface SearchPanelProps {
 
 export default function SearchPanel({ 
   onSearch, 
-  placeholder = "Search...",
-  enableFeatures = {}
+  placeholder = "Search..."
 }: SearchPanelProps) {
   const [query, setQuery] = useState('');
 

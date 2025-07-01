@@ -1,19 +1,31 @@
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
-import React, { useState } from "react";
-import { useRouter, usePathname } from "next/navigation";
+import React, { useState, useEffect } from "react";
+import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 export type HeaderInputProps = {
   onSmartSuggestOpen: () => void;
   onOpenResearch?: () => void;
+  defaultValue?: string;
 };
 
-export function HeaderInput({ onSmartSuggestOpen, onOpenResearch }: HeaderInputProps) {
+export function HeaderInput({ onSmartSuggestOpen, onOpenResearch, defaultValue = "" }: HeaderInputProps) {
   const router = useRouter();
   const pathname = usePathname();
-  const [value, setValue] = useState("");
+  const searchParams = useSearchParams();
+  const [value, setValue] = useState(defaultValue);
+
+  // Update value when defaultValue changes or when we're on a results page
+  useEffect(() => {
+    const queryParam = searchParams.get('q');
+    if (queryParam && pathname.includes('/results')) {
+      setValue(queryParam);
+    } else if (defaultValue) {
+      setValue(defaultValue);
+    }
+  }, [defaultValue, searchParams, pathname]);
 
   const handleSearch = () => {
     if (value.trim()) {
@@ -27,7 +39,10 @@ export function HeaderInput({ onSmartSuggestOpen, onOpenResearch }: HeaderInputP
         // Default fallback
         router.push(`/search?query=${encodeURIComponent(value.trim())}`);
       }
-      setValue("");
+      // Don't clear the input on results pages to maintain context
+      if (!pathname.includes('/results')) {
+        setValue("");
+      }
     }
   };
 
