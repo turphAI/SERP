@@ -14,9 +14,9 @@ export default function SearchPage() {
     setSearchQuery(query);
     // Mock search results for demonstration
     setSearchResults([
-      `Results for "${query}" in ${activeTab} - Result 1`,
-      `Results for "${query}" in ${activeTab} - Result 2`, 
-      `Results for "${query}" in ${activeTab} - Result 3`
+      `Results for &ldquo;${query}&rdquo; in ${activeTab} - Result 1`,
+      `Results for &ldquo;${query}&rdquo; in ${activeTab} - Result 2`, 
+      `Results for &ldquo;${query}&rdquo; in ${activeTab} - Result 3`
     ]);
   };
 
@@ -25,9 +25,9 @@ export default function SearchPage() {
     // If there's a current search, re-run it with the new tab
     if (searchQuery) {
       setSearchResults([
-        `Results for "${searchQuery}" in ${tab} - Result 1`,
-        `Results for "${searchQuery}" in ${tab} - Result 2`, 
-        `Results for "${searchQuery}" in ${tab} - Result 3`
+        `Results for &ldquo;${searchQuery}&rdquo; in ${tab} - Result 1`,
+        `Results for &ldquo;${searchQuery}&rdquo; in ${tab} - Result 2`, 
+        `Results for &ldquo;${searchQuery}&rdquo; in ${tab} - Result 3`
       ]);
     }
   };
@@ -75,7 +75,7 @@ export default function SearchPage() {
               onSearch={handleSearch}
             />
             <p className="text-sm text-gray-500 mt-2">
-              Current value: "{searchQuery}" | Active tab: "{activeTab}"
+              Current value: &ldquo;{searchQuery}&rdquo; | Active tab: &ldquo;{activeTab}&rdquo;
             </p>
           </div>
 
