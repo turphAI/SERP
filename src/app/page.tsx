@@ -34,7 +34,8 @@ export default function Home() {
       description: 'Show related questions and topics to help users refine their search.',
       versions: [
         { version: 'v1', href: '/related-questions/v1', status: 'Complete', description: 'Remove accordion FAQ, replace with conversation buttons' },
-        { version: 'v2', href: '/related-questions/v2', status: 'Complete', description: 'Use branded conversational buttons' }
+        { version: 'v2', href: '/related-questions/v2', status: 'Complete', description: 'Use branded conversational buttons' },
+        { version: 'v3', href: '/related-questions/v3', status: 'Complete', description: 'FAQ accordion for related questions' }
       ]
     },
     {

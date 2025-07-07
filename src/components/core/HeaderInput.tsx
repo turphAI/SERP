@@ -36,6 +36,8 @@ function HeaderInputWithParams({ onSmartSuggestOpen, onOpenResearch, defaultValu
         router.push(`/related-questions/v1/results?q=${encodeURIComponent(value.trim())}`);
       } else if (pathname.startsWith('/related-questions/v2')) {
         router.push(`/related-questions/v2/results?q=${encodeURIComponent(value.trim())}`);
+      } else if (pathname.startsWith('/related-questions/v3')) {
+        router.push(`/related-questions/v3/results?q=${encodeURIComponent(value.trim())}`);
       } else if (pathname.startsWith('/type-ahead/')) {
         // Will add this later
         router.push(`/search?query=${encodeURIComponent(value.trim())}`);
