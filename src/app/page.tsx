@@ -42,7 +42,7 @@ export default function Home() {
       name: 'Enhanced Input',
       description: 'Advanced search input with smart features and improved UX.',
       versions: [
-        { version: 'v1', href: '/enhanced-input/v1', status: 'Planned', description: 'Enhanced input controls' },
+        { version: 'v1', href: '/enhanced-input/v1', status: 'In Progress', description: 'Floating bottom input with scrollable content' },
         { version: 'v2', href: '/enhanced-input/v2', status: 'Planned', description: 'Advanced input features' }
       ]
     },
