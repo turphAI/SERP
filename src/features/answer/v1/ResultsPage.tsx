@@ -6,8 +6,6 @@ import Layout from '@/components/core/Layout';
 import BasicInput from '@/components/shared/BasicInput';
 import TabRow from '@/components/shared/TabRow';
 import SearchResult from '@/components/shared/SearchResult';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 
 interface ResultsPageProps {
   searchQuery: string;

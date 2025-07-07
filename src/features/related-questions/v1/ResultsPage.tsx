@@ -8,8 +8,7 @@ import TabRow from '@/components/shared/TabRow';
 import SearchResult from '@/components/shared/SearchResult';
 import RelatedQuestionList from '@/components/shared/RelatedQuestionList';
 import ChatbotModal from '@/components/shared/ChatbotModal';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
+
 
 interface ResultsPageProps {
   searchQuery: string;

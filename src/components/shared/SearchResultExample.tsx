@@ -82,8 +82,8 @@ export default function SearchResultExample() {
         <h3 className="font-medium mb-2 text-sm text-blue-700">Data Structure Change:</h3>
         <div className="text-sm text-gray-600 space-y-2">
           <div className="bg-white p-2 rounded font-mono">
-            <div className="text-red-600">- url: "https://react.dev"</div>
-            <div className="text-green-600">+ assetType: "Guide"</div>
+            <div className="text-red-600">- url: &quot;https://react.dev&quot;</div>
+            <div className="text-green-600">+ assetType: &quot;Guide&quot;</div>
           </div>
           <p className="text-xs">Simply replace the URL field with an assetType field using one of the 9 supported asset types.</p>
         </div>
