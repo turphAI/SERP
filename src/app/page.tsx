@@ -9,7 +9,7 @@ export default function Home() {
       name: 'Answer',
       description: 'AI-powered answer cards that appear above search results with confidence indicators and sources.',
       versions: [
-        { version: 'v1', href: '/answer/v1', status: 'Complete', description: 'Basic answer cards with confidence badges' }
+        { version: 'v1', href: '/answer/v1', status: 'Complete', description: 'Append the phrase Key passage: to applicable results' }
       ]
     },
     {
@@ -34,7 +34,7 @@ export default function Home() {
       description: 'Show related questions and topics to help users refine their search.',
       versions: [
         { version: 'v1', href: '/related-questions/v1', status: 'Complete', description: 'Remove accordion FAQ, replace with conversation buttons' },
-        { version: 'v2', href: '/related-questions/v2', status: 'Planned', description: 'Smart contextual questions' }
+        { version: 'v2', href: '/related-questions/v2', status: 'Complete', description: 'Use branded conversational buttons' }
       ]
     },
     {
@@ -65,7 +65,7 @@ export default function Home() {
   };
 
   return (
-    <Layout variant="home">
+    <Layout variant="landing">
       <div className="container mx-auto px-4 py-8 max-w-6xl">
         {/* Header */}
         <div className="text-center mb-12">

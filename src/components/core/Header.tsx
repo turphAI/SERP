@@ -70,7 +70,7 @@ export default function Header({
     <div className="flex w-full items-center justify-between gap-2 px-4 py-2">
       <Link href="/" className="flex items-center gap-2 font-bold text-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-ring">
         <Briefcase className="w-6 h-6" />
-        <span>Search Experience</span>
+        <span>Finance Company</span>
       </Link>
       <div className="flex items-center gap-2">
         <Button variant="ghost" className="flex items-center gap-1">

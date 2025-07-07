@@ -21,6 +21,8 @@ const buttonVariants = cva(
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         "conversation-gray":
           "bg-[#e5e5e5] text-gray-700 shadow-xs hover:bg-gray-300",
+        "conversation-branded":
+          "bg-blue-600 text-white shadow-xs hover:bg-blue-700 focus-visible:ring-blue-200",
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {
