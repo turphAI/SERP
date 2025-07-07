@@ -6,6 +6,8 @@ import Layout from '@/components/core/Layout';
 import BasicInput from '@/components/shared/BasicInput';
 import TabRow from '@/components/shared/TabRow';
 import SearchResult from '@/components/shared/SearchResult';
+import RelatedQuestionList from '@/components/shared/RelatedQuestionList';
+import ChatbotModal from '@/components/shared/ChatbotModal';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
@@ -16,15 +18,27 @@ interface ResultsPageProps {
 export default function ResultsPage({ searchQuery }: ResultsPageProps) {
   const router = useRouter();
   const [activeTab, setActiveTab] = useState('All');
+  const [isChatbotOpen, setIsChatbotOpen] = useState(false);
+  const [selectedQuestion, setSelectedQuestion] = useState('');
 
   const handleNewSearch = (query: string) => {
-    router.push(`/answer/v1/results?q=${encodeURIComponent(query)}`);
+    router.push(`/related-questions/v1/results?q=${encodeURIComponent(query)}`);
   };
 
   const handleTabChange = (tab: string) => {
     setActiveTab(tab);
     // In a real app, this would trigger a new search with the selected tab filter
     console.log(`Tab changed to: ${tab}`);
+  };
+
+  const handleQuestionClick = (question: string) => {
+    setSelectedQuestion(question);
+    setIsChatbotOpen(true);
+  };
+
+  const handleCloseChatbot = () => {
+    setIsChatbotOpen(false);
+    setSelectedQuestion('');
   };
 
 
@@ -194,6 +208,11 @@ export default function ResultsPage({ searchQuery }: ResultsPageProps) {
           />
         </div>
 
+        {/* Related Questions */}
+        <div className="mb-6">
+          <RelatedQuestionList onQuestionClick={handleQuestionClick} />
+        </div>
+
         {/* Tab Row outside the card */}
         <div className="mb-6">
           <TabRow onTabChange={handleTabChange} />
@@ -221,6 +240,13 @@ export default function ResultsPage({ searchQuery }: ResultsPageProps) {
           ))}
         </div>
       </div>
+
+      {/* Chatbot Modal */}
+      <ChatbotModal 
+        isOpen={isChatbotOpen}
+        onClose={handleCloseChatbot}
+        initialQuestion={selectedQuestion}
+      />
     </Layout>
   );
 } 

@@ -33,7 +33,7 @@ export default function Home() {
       name: 'Related Questions',
       description: 'Show related questions and topics to help users refine their search.',
       versions: [
-        { version: 'v1', href: '/related-questions/v1', status: 'Planned', description: 'Basic related questions' },
+        { version: 'v1', href: '/related-questions/v1', status: 'Complete', description: 'Remove accordion FAQ, replace with conversation buttons' },
         { version: 'v2', href: '/related-questions/v2', status: 'Planned', description: 'Smart contextual questions' }
       ]
     },
