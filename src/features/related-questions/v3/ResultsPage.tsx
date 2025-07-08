@@ -6,6 +6,7 @@ import Layout from '@/components/core/Layout';
 import BasicInput from '@/components/shared/BasicInput';
 import TabRow from '@/components/shared/TabRow';
 import SearchResult from '@/components/shared/SearchResult';
+import BestMatchResult from '@/components/shared/BestMatchResult';
 import RelatedQuestionsAccordion from './RelatedQuestionsAccordion';
 import ChatbotModal from '@/components/shared/ChatbotModal';
 
@@ -17,8 +18,7 @@ interface ResultsPageProps {
 export default function ResultsPage({ searchQuery }: ResultsPageProps) {
   const router = useRouter();
   const [activeTab, setActiveTab] = useState('All');
-  const [isChatbotOpen, setIsChatbotOpen] = useState(false);
-  const [selectedQuestion, setSelectedQuestion] = useState('');
+  const [showChatbot, setShowChatbot] = useState(false);
 
   const handleNewSearch = (query: string) => {
     router.push(`/related-questions/v3/results?q=${encodeURIComponent(query)}`);
@@ -30,11 +30,9 @@ export default function ResultsPage({ searchQuery }: ResultsPageProps) {
     console.log(`Tab changed to: ${tab}`);
   };
 
-  const handleCloseChatbot = () => {
-    setIsChatbotOpen(false);
-    setSelectedQuestion('');
+  const handleChatbotClose = () => {
+    setShowChatbot(false);
   };
-
 
 
   const searchResults = [
@@ -190,6 +188,10 @@ export default function ResultsPage({ searchQuery }: ResultsPageProps) {
     }
   ];
 
+  // Helper functions to split results with edge case handling
+  const bestMatchResult = searchResults.length > 0 ? searchResults[0] : null;
+  const remainingResults = searchResults.length > 1 ? searchResults.slice(1) : [];
+
   return (
     <Layout variant="results">
       <div className="max-w-4xl mx-auto">
@@ -202,45 +204,55 @@ export default function ResultsPage({ searchQuery }: ResultsPageProps) {
           />
         </div>
 
-        {/* Related Questions */}
-        <div className="mb-6">
-          <RelatedQuestionsAccordion />
-        </div>
-
-        {/* Tab Row outside the card */}
-        <div className="mb-6">
-          <TabRow onTabChange={handleTabChange} />
-        </div>
-
+        {/* Page heading */}
         <div className="mb-4">
+          <h1 className="text-2xl font-bold text-gray-900 mb-2">Search Results</h1>
           <p className="text-sm text-gray-600">
             Search results for: <span className="font-medium">&ldquo;{searchQuery}&rdquo;</span> in <span className="font-medium">{activeTab}</span>
           </p>
         </div>
 
+        {/* Tab Row */}
+        <div className="mb-6">
+          <TabRow onTabChange={handleTabChange} />
+        </div>
 
+        {/* Best Match Result - Only show if we have results */}
+        {bestMatchResult && (
+          <div className="mb-6">
+            <BestMatchResult
+              id={bestMatchResult.id}
+              title={bestMatchResult.title}
+              assetType={bestMatchResult.assetType}
+              snippet={bestMatchResult.snippet}
+            />
+          </div>
+        )}
+
+        {/* Related Questions */}
+        <div className="mb-6">
+          <RelatedQuestionsAccordion />
+        </div>
 
         {/* Regular search results */}
-        <div className="space-y-4">
-          <h2 className="text-lg font-semibold text-gray-900">Site assets</h2>
-          {searchResults.map((result) => (
-            <SearchResult
-              key={result.id}
-              id={result.id}
-              title={result.title}
-              assetType={result.assetType}
-              snippet={result.snippet}
-            />
-          ))}
-        </div>
+        {remainingResults.length > 0 && (
+          <div className="space-y-4">
+            <h2 className="text-lg font-semibold text-gray-900">Site assets</h2>
+            {remainingResults.map((result) => (
+              <SearchResult
+                key={result.id}
+                id={result.id}
+                title={result.title}
+                assetType={result.assetType}
+                snippet={result.snippet}
+              />
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Chatbot Modal */}
-      <ChatbotModal 
-        isOpen={isChatbotOpen}
-        onClose={handleCloseChatbot}
-        initialQuestion={selectedQuestion}
-      />
+      <ChatbotModal isOpen={showChatbot} onClose={handleChatbotClose} />
     </Layout>
   );
 } 
