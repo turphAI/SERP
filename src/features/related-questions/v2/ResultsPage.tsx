@@ -212,7 +212,7 @@ export default function ResultsPage({ searchQuery }: ResultsPageProps) {
 
         {/* Page heading */}
         <div className="mb-4">
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">Search Results</h1>
+          <h1 className="text-2xl font-bold text-gray-900 mb-2">Search results</h1>
           <p className="text-sm text-gray-600">
             Search results for: <span className="font-medium">&ldquo;{searchQuery}&rdquo;</span> in <span className="font-medium">{activeTab}</span>
           </p>

@@ -21,6 +21,7 @@ export type HeaderProps = {
   onSmartSuggestOpen?: () => void;
   selectedTestOption?: string;
   onSelectTestOption?: (option: string) => void;
+  homeHref?: string;
 };
 
 const navLinks = [
@@ -47,6 +48,7 @@ export default function Header({
   onSmartSuggestOpen,
   selectedTestOption,
   onSelectTestOption,
+  homeHref = "/",
 }: HeaderProps) {
   const [testingMenuOpen, setTestingMenuOpen] = useState(false);
   const [showTextStrings, setShowTextStrings] = useState(false);
@@ -62,13 +64,14 @@ export default function Header({
 
   const handleLogout = () => {
     setShowTextStrings(false);
+    router.push('/');
     onLogout?.();
   };
 
   // Top row: logo/company (left), actions (right)
   const topRow = (
     <div className="flex w-full items-center justify-between gap-2 px-4 py-2">
-      <Link href="/" className="flex items-center gap-2 font-bold text-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+      <Link href={homeHref} className="flex items-center gap-2 font-bold text-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-ring">
         <Briefcase className="w-6 h-6" />
         <span>Finance Company</span>
       </Link>

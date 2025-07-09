@@ -44,153 +44,153 @@ export default function ResultsPage({ searchQuery }: ResultsPageProps) {
   const searchResults = [
     {
       id: 1,
-      title: "Advanced JavaScript Programming Techniques",
+      title: "401(k) vs 403(b): Understanding Your Retirement Plan Options",
       assetType: "Article" as const,
-      snippet: "Master advanced JavaScript concepts including closures, prototypes, async/await, and modern ES6+ features for professional development."
+      snippet: "Comprehensive comparison of employer-sponsored retirement plans including contribution limits, vesting schedules, and investment options to help you make informed decisions."
     },
     {
       id: 2, 
-      title: "Employee Onboarding Form",
+      title: "Retirement Plan Enrollment Form",
       assetType: "Form" as const,
-      snippet: "Complete new employee registration form including personal details, department assignment, and system access requests."
+      snippet: "Complete your retirement plan enrollment including beneficiary designation, contribution percentage, and investment allocations for your 401(k) or 403(b) account."
     },
     {
       id: 3,
-      title: "Complete Guide to DevOps Implementation",
+      title: "Complete Guide to IRA Rollover Strategies",
       assetType: "Guide" as const,
-      snippet: "Step-by-step guide to implementing DevOps practices including CI/CD pipelines, containerization, and monitoring strategies."
+      snippet: "Step-by-step instructions for rolling over your 401(k) to an IRA, including tax implications, timing considerations, and investment options."
     },
     {
       id: 4,
-      title: "Python Data Structures Challenge",
+      title: "Retirement Savings Challenge: Catch-Up Contributions",
       assetType: "Learning Challenge" as const,
-      snippet: "Interactive coding challenge focusing on implementing and optimizing data structures like trees, graphs, and hash tables in Python."
+      snippet: "Interactive financial planning exercise for employees 50+ to maximize catch-up contributions and accelerate retirement savings in the final working years."
     },
     {
       id: 5,
-      title: "Microservices Architecture Diagram",
+      title: "Social Security Benefits Timeline",
       assetType: "Infographic" as const,
-      snippet: "Visual breakdown of microservices architecture showing service communication, data flow, and deployment patterns."
+      snippet: "Visual guide showing optimal Social Security claiming strategies by age, including early retirement penalties and delayed retirement credits through age 70."
     },
     {
       id: 6,
-      title: "API Security Best Practices",
+      title: "Roth vs Traditional IRA Comparison",
       assetType: "Page" as const,
-      snippet: "Comprehensive documentation covering API security measures including authentication, rate limiting, and vulnerability prevention."
+      snippet: "Detailed comparison of Roth and Traditional IRA features including tax treatment, contribution limits, income restrictions, and withdrawal rules."
     },
     {
       id: 7,
-      title: "React State Management Deep Dive",
+      title: "Retirement Planning for Millennials",
       assetType: "Video" as const,
-      snippet: "90-minute video tutorial exploring Redux, Context API, and Zustand for managing complex application state in React."
+      snippet: "45-minute educational video covering retirement planning basics for younger workers, including compound interest benefits and early savings strategies."
     },
     {
       id: 8,
-      title: "Agile Project Management Workshop",
+      title: "Pre-Retirement Planning Workshop",
       assetType: "Webinar" as const,
-      snippet: "Live workshop covering agile methodologies, sprint planning, and team collaboration techniques for successful project delivery."
+      snippet: "Live workshop for employees within 10 years of retirement covering Social Security optimization, healthcare planning, and withdrawal strategies."
     },
     {
       id: 9,
-      title: "Code Quality Assistant",
+      title: "Retirement Calculator Assistant",
       assetType: "Assistant" as const,
-      snippet: "AI-powered tool that analyzes code quality, suggests refactoring opportunities, and ensures adherence to coding standards."
+      snippet: "AI-powered retirement planning tool that analyzes your current savings, projects future needs, and recommends contribution adjustments to meet your goals."
     },
     {
       id: 10,
-      title: "Understanding Design Patterns",
+      title: "Target-Date Funds: Set It and Forget It Investing",
       assetType: "Article" as const,
-      snippet: "Comprehensive article explaining common design patterns including Singleton, Observer, and Factory patterns with practical examples."
+      snippet: "In-depth explanation of target-date funds, including how they automatically adjust asset allocation as you approach retirement and their role in 401(k) plans."
     },
     {
       id: 11,
-      title: "Project Budget Request Form",
+      title: "Hardship Withdrawal Request Form",
       assetType: "Form" as const,
-      snippet: "Submit detailed budget requests for new projects including resource allocation, timeline, and cost justification."
+      snippet: "Submit a hardship withdrawal request from your retirement plan for qualifying financial emergencies, including required documentation and tax implications."
     },
     {
       id: 12,
-      title: "Mobile App Development Guide",
+      title: "Estate Planning for Retirement Accounts",
       assetType: "Guide" as const,
-      snippet: "Complete guide to mobile app development covering native, hybrid, and cross-platform approaches with React Native and Flutter."
+      snippet: "Comprehensive guide to naming beneficiaries, understanding inheritance rules, and minimizing taxes on retirement account transfers to heirs."
     },
     {
       id: 13,
-      title: "Algorithm Optimization Challenge",
+      title: "Asset Allocation Challenge by Age",
       assetType: "Learning Challenge" as const,
-      snippet: "Advanced challenge focusing on algorithm optimization techniques including time complexity analysis and space efficiency."
+      snippet: "Interactive tool to practice optimal asset allocation strategies for different life stages, from aggressive growth in your 20s to conservative preservation near retirement."
     },
     {
       id: 14,
-      title: "Cloud Migration Strategy Flowchart",
+      title: "Retirement Income Sources Breakdown",
       assetType: "Infographic" as const,
-      snippet: "Decision tree and process flow for migrating legacy applications to cloud infrastructure with risk assessment."
+      snippet: "Visual representation of the three-legged stool of retirement: Social Security, employer-sponsored plans, and personal savings with recommended percentages."
     },
     {
       id: 15,
-      title: "Database Performance Tuning",
+      title: "Required Minimum Distributions (RMD) Rules",
       assetType: "Page" as const,
-      snippet: "Technical documentation for optimizing database performance including indexing strategies, query optimization, and caching."
+      snippet: "Complete documentation of RMD requirements for traditional IRAs and 401(k)s, including calculation methods, timing, and penalties for missed distributions."
     },
     {
       id: 16,
-      title: "Kubernetes Container Orchestration",
+      title: "Understanding Pension Plan Benefits",
       assetType: "Video" as const,
-      snippet: "Comprehensive video series covering Kubernetes fundamentals, deployment strategies, and production management techniques."
+      snippet: "Educational video series explaining defined benefit pension plans, including vesting requirements, payout options, and how to maximize your pension benefits."
     },
     {
       id: 17,
-      title: "Digital Transformation Strategies",
+      title: "Women and Retirement Planning",
       assetType: "Webinar" as const,
-      snippet: "Expert panel discussion on digital transformation strategies for enterprises including technology adoption and change management."
+      snippet: "Expert discussion addressing unique retirement challenges for women, including longer lifespans, career breaks, and strategies to overcome the retirement savings gap."
     },
     {
       id: 18,
-      title: "Test Automation Assistant",
+      title: "HSA Retirement Strategy Assistant",
       assetType: "Assistant" as const,
-      snippet: "Intelligent assistant that generates automated test cases, identifies test gaps, and optimizes testing workflows."
+      snippet: "Intelligent tool that demonstrates how Health Savings Accounts can serve as powerful retirement planning vehicles with triple tax advantages."
     },
     {
       id: 19,
-      title: "Web Performance Optimization",
+      title: "Early Retirement: FIRE Movement Strategies",
       assetType: "Article" as const,
-      snippet: "In-depth article covering web performance optimization techniques including lazy loading, code splitting, and CDN implementation."
+      snippet: "Comprehensive article covering Financial Independence, Retire Early (FIRE) strategies including extreme savings rates, geographic arbitrage, and withdrawal methods."
     },
     {
       id: 20,
-      title: "Time Off Request Form",
+      title: "Beneficiary Designation Update Form",
       assetType: "Form" as const,
-      snippet: "Employee vacation and leave request form with approval workflow and calendar integration for team scheduling."
+      snippet: "Update beneficiary information for your retirement accounts including primary and contingent beneficiaries with proper legal names and percentages."
     },
     {
       id: 21,
-      title: "Machine Learning Implementation Guide",
+      title: "Small Business Retirement Plan Setup Guide",
       assetType: "Guide" as const,
-      snippet: "Practical guide to implementing machine learning solutions including data preprocessing, model selection, and deployment."
+      snippet: "Complete guide for small business owners to establish retirement plans including SEP-IRAs, Simple IRAs, and solo 401(k) options with cost comparisons."
     },
     {
       id: 22,
-      title: "Frontend Framework Comparison Challenge",
+      title: "Retirement Planning Literacy Quiz",
       assetType: "Learning Challenge" as const,
-      snippet: "Hands-on challenge comparing React, Vue, and Angular by building the same application in each framework."
+      snippet: "Test your knowledge of retirement planning fundamentals including contribution limits, tax rules, and investment basics with detailed explanations."
     },
     {
       id: 23,
-      title: "Software Development Lifecycle Overview",
+      title: "Medicare and Retirement Healthcare Costs",
       assetType: "Infographic" as const,
-      snippet: "Visual representation of the complete SDLC process from requirements gathering to maintenance and support."
+      snippet: "Visual guide to Medicare enrollment, coverage options, and estimated healthcare costs in retirement including supplemental insurance recommendations."
     },
     {
       id: 24,
-      title: "Version Control Best Practices",
+      title: "Retirement Plan Fee Disclosure",
       assetType: "Page" as const,
-      snippet: "Guidelines for effective version control using Git including branching strategies, commit conventions, and collaboration workflows."
+      snippet: "Detailed breakdown of retirement plan fees including administrative costs, investment expense ratios, and how fees impact long-term retirement savings growth."
     },
     {
       id: 25,
-      title: "Cybersecurity Fundamentals",
+      title: "Creating a Retirement Budget",
       assetType: "Video" as const,
-      snippet: "Essential cybersecurity training covering threat identification, risk assessment, and security protocol implementation."
+      snippet: "Step-by-step video tutorial on building a realistic retirement budget, estimating expenses, and ensuring your savings will last throughout retirement."
     }
   ];
 
@@ -203,7 +203,7 @@ export default function ResultsPage({ searchQuery }: ResultsPageProps) {
       <div className="max-w-4xl mx-auto pb-24">
         {/* Page heading */}
         <div className="mb-4">
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">Search Results</h1>
+          <h1 className="text-2xl font-bold text-gray-900 mb-2">Search results</h1>
           <p className="text-sm text-gray-600">
             Search results for: <span className="font-medium">&ldquo;{searchQuery}&rdquo;</span> in <span className="font-medium">{activeTab}</span>
           </p>
@@ -249,11 +249,10 @@ export default function ResultsPage({ searchQuery }: ResultsPageProps) {
       </div>
 
       {/* Fixed bottom search input */}
-      <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 w-full max-w-4xl mx-auto px-4">
+      <div className="fixed bottom-12 left-1/2 transform -translate-x-1/2 w-full max-w-4xl mx-auto px-4">
         <div className="bg-white rounded-lg shadow-2xl p-6">
           <BasicInput
-            value={searchQuery}
-            placeholder="Search for anything..."
+            placeholder="Ask a follow up..."
             onSearch={handleNewSearch}
           />
         </div>
