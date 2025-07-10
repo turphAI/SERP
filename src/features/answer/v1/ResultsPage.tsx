@@ -25,164 +25,165 @@ export default function ResultsPage({ searchQuery }: ResultsPageProps) {
     console.log(`Tab changed to: ${tab}`);
   };
 
-
-
   const searchResults = [
     {
       id: 1,
-      title: "Advanced JavaScript Programming Techniques",
+      title: "The Complete Guide to Starting Your First Budget",
       assetType: "Article" as const,
-      snippet: "Master advanced JavaScript concepts including closures, prototypes, async/await, and modern ES6+ features for professional development."
+      snippet: "Learn the fundamentals of budgeting including the 50/30/20 rule, tracking expenses, and setting realistic financial goals for beginners."
     },
     {
       id: 2, 
-      title: "Employee Onboarding Form",
+      title: "Monthly Budget Worksheet Template",
       assetType: "Form" as const,
-      snippet: "Complete new employee registration form including personal details, department assignment, and system access requests."
+      snippet: "Download our comprehensive monthly budget worksheet to track income, expenses, and savings goals with built-in calculators."
     },
     {
       id: 3,
-      title: "Complete Guide to DevOps Implementation",
-      assetType: "Guide" as const,
-      snippet: "Step-by-step guide to implementing DevOps practices including CI/CD pipelines, containerization, and monitoring strategies."
+      title: "Smart Budget Planning Assistant",
+      assetType: "Assistant" as const,
+      snippet: "AI-powered assistant that helps you create personalized budgets based on your income, expenses, and financial goals with step-by-step guidance."
     },
     {
       id: 4,
-      title: "Python Data Structures Challenge",
+      title: "Budget Challenge: Track Every Expense for 30 Days",
       assetType: "Learning Challenge" as const,
-      snippet: "Interactive coding challenge focusing on implementing and optimizing data structures like trees, graphs, and hash tables in Python."
+      snippet: "Interactive 30-day challenge to build the habit of expense tracking using both digital tools and traditional methods."
     },
     {
       id: 5,
-      title: "Microservices Architecture Diagram",
-      assetType: "Infographic" as const,
-      snippet: "Visual breakdown of microservices architecture showing service communication, data flow, and deployment patterns."
+      title: "Expense Categorization Assistant",
+      assetType: "Assistant" as const,
+      snippet: "Intelligent assistant that automatically categorizes your expenses and identifies spending patterns to optimize your budget allocation."
     },
     {
       id: 6,
-      title: "API Security Best Practices",
+      title: "Emergency Fund Planning Strategies",
       assetType: "Page" as const,
-      snippet: "Comprehensive documentation covering API security measures including authentication, rate limiting, and vulnerability prevention."
+      snippet: "Comprehensive guide to building your emergency fund as the foundation of any budget, with tips for different income levels."
     },
     {
       id: 7,
-      title: "React State Management Deep Dive",
+      title: "Budgeting Apps Comparison Video",
       assetType: "Video" as const,
-      snippet: "90-minute video tutorial exploring Redux, Context API, and Zustand for managing complex application state in React."
+      snippet: "45-minute comparison of popular budgeting apps including Mint, YNAB, EveryDollar, and PocketGuard with hands-on demonstrations."
     },
     {
       id: 8,
-      title: "Agile Project Management Workshop",
-      assetType: "Webinar" as const,
-      snippet: "Live workshop covering agile methodologies, sprint planning, and team collaboration techniques for successful project delivery."
+      title: "Debt Payoff Strategy Assistant",
+      assetType: "Assistant" as const,
+      snippet: "Smart assistant that analyzes your debts and creates personalized payoff strategies using snowball or avalanche methods within your budget."
     },
     {
       id: 9,
-      title: "Code Quality Assistant",
+      title: "Budget Optimization Assistant",
       assetType: "Assistant" as const,
-      snippet: "AI-powered tool that analyzes code quality, suggests refactoring opportunities, and ensures adherence to coding standards."
+      snippet: "AI-powered budgeting assistant that analyzes spending patterns, suggests optimizations, and helps automate your budget tracking."
     },
     {
       id: 10,
-      title: "Understanding Design Patterns",
+      title: "Common Budgeting Mistakes to Avoid",
       assetType: "Article" as const,
-      snippet: "Comprehensive article explaining common design patterns including Singleton, Observer, and Factory patterns with practical examples."
+      snippet: "Learn about the most common budgeting pitfalls including unrealistic expectations, ignoring small expenses, and not planning for irregular costs."
     },
     {
       id: 11,
-      title: "Project Budget Request Form",
-      assetType: "Form" as const,
-      snippet: "Submit detailed budget requests for new projects including resource allocation, timeline, and cost justification."
+      title: "Savings Goal Assistant",
+      assetType: "Assistant" as const,
+      snippet: "Interactive assistant that helps you set realistic savings goals, calculate timelines, and adjust your budget to achieve financial milestones."
     },
     {
       id: 12,
-      title: "Mobile App Development Guide",
+      title: "Family Budget Planning Guide",
       assetType: "Guide" as const,
-      snippet: "Complete guide to mobile app development covering native, hybrid, and cross-platform approaches with React Native and Flutter."
+      snippet: "Complete guide to family budgeting including childcare costs, education savings, and involving kids in financial planning."
     },
     {
       id: 13,
-      title: "Algorithm Optimization Challenge",
-      assetType: "Learning Challenge" as const,
-      snippet: "Advanced challenge focusing on algorithm optimization techniques including time complexity analysis and space efficiency."
+      title: "Bill Negotiation Assistant",
+      assetType: "Assistant" as const,
+      snippet: "AI assistant that helps you identify bills to negotiate, provides scripts and strategies, and tracks savings to update your budget."
     },
     {
       id: 14,
-      title: "Cloud Migration Strategy Flowchart",
+      title: "Debt Snowball vs Avalanche Method",
       assetType: "Infographic" as const,
-      snippet: "Decision tree and process flow for migrating legacy applications to cloud infrastructure with risk assessment."
+      snippet: "Compare debt payoff strategies within your budget framework, showing mathematical and psychological benefits of each approach."
     },
     {
       id: 15,
-      title: "Database Performance Tuning",
-      assetType: "Page" as const,
-      snippet: "Technical documentation for optimizing database performance including indexing strategies, query optimization, and caching."
+      title: "Budget Variance Analysis Assistant",
+      assetType: "Assistant" as const,
+      snippet: "Smart assistant that compares your planned vs actual spending, identifies trends, and suggests budget adjustments for better accuracy."
     },
     {
       id: 16,
-      title: "Kubernetes Container Orchestration",
+      title: "Budget Meal Planning Strategies",
       assetType: "Video" as const,
-      snippet: "Comprehensive video series covering Kubernetes fundamentals, deployment strategies, and production management techniques."
+      snippet: "Comprehensive video series on reducing food costs through meal planning, bulk buying, and cooking at home while maintaining nutrition."
     },
     {
       id: 17,
-      title: "Digital Transformation Strategies",
+      title: "Small Business Budget Planning",
       assetType: "Webinar" as const,
-      snippet: "Expert panel discussion on digital transformation strategies for enterprises including technology adoption and change management."
+      snippet: "Expert discussion on creating budgets for small businesses including cash flow management, expense categorization, and growth planning."
     },
     {
       id: 18,
-      title: "Test Automation Assistant",
+      title: "Budget Tracking Assistant",
       assetType: "Assistant" as const,
-      snippet: "Intelligent assistant that generates automated test cases, identifies test gaps, and optimizes testing workflows."
+      snippet: "Intelligent assistant that monitors spending, sends alerts for budget overages, and provides personalized money-saving suggestions."
     },
     {
       id: 19,
-      title: "Web Performance Optimization",
+      title: "Annual Budget Review and Planning",
       assetType: "Article" as const,
-      snippet: "In-depth article covering web performance optimization techniques including lazy loading, code splitting, and CDN implementation."
+      snippet: "In-depth guide to conducting yearly budget reviews, adjusting for life changes, and setting financial goals for the coming year."
     },
     {
       id: 20,
-      title: "Time Off Request Form",
-      assetType: "Form" as const,
-      snippet: "Employee vacation and leave request form with approval workflow and calendar integration for team scheduling."
+      title: "Emergency Budget Assistant",
+      assetType: "Assistant" as const,
+      snippet: "Crisis management assistant that helps you quickly adjust your budget during unexpected financial hardships or income changes."
     },
     {
       id: 21,
-      title: "Machine Learning Implementation Guide",
+      title: "Envelope Budgeting Method Guide",
       assetType: "Guide" as const,
-      snippet: "Practical guide to implementing machine learning solutions including data preprocessing, model selection, and deployment."
+      snippet: "Traditional envelope budgeting method updated for modern banking, including digital envelope systems and cash management strategies."
     },
     {
       id: 22,
-      title: "Frontend Framework Comparison Challenge",
+      title: "Budget vs Actual Spending Challenge",
       assetType: "Learning Challenge" as const,
-      snippet: "Hands-on challenge comparing React, Vue, and Angular by building the same application in each framework."
+      snippet: "Real-world challenge to compare planned vs actual spending across different budget categories and improve estimation skills."
     },
     {
       id: 23,
-      title: "Software Development Lifecycle Overview",
-      assetType: "Infographic" as const,
-      snippet: "Visual representation of the complete SDLC process from requirements gathering to maintenance and support."
+      title: "Investment Budget Assistant",
+      assetType: "Assistant" as const,
+      snippet: "Specialized assistant that helps you allocate budget for investments, balancing risk tolerance with financial goals and timelines."
     },
     {
       id: 24,
-      title: "Version Control Best Practices",
+      title: "Budget Maintenance Best Practices",
       assetType: "Page" as const,
-      snippet: "Guidelines for effective version control using Git including branching strategies, commit conventions, and collaboration workflows."
+      snippet: "Guidelines for keeping your budget up-to-date, handling unexpected expenses, and making seasonal adjustments to stay on track."
     },
     {
       id: 25,
-      title: "Cybersecurity Fundamentals",
-      assetType: "Video" as const,
-      snippet: "Essential cybersecurity training covering threat identification, risk assessment, and security protocol implementation."
+      title: "College Budget Planning Assistant",
+      assetType: "Assistant" as const,
+      snippet: "Student-focused assistant that helps create budgets for tuition, textbooks, housing, and part-time income while building financial literacy."
     }
   ];
 
   return (
     <Layout variant="results">
       <div className="max-w-4xl mx-auto">
+        {/* Search Results Header */}
+        <h1 className="text-2xl font-bold text-gray-900 mb-4">Search Results</h1>
+        
         {/* Search Input at top of results */}
         <div className="mb-4 bg-white rounded-lg shadow p-6">
           <BasicInput
@@ -202,8 +203,6 @@ export default function ResultsPage({ searchQuery }: ResultsPageProps) {
             Search results for: <span className="font-medium">&ldquo;{searchQuery}&rdquo;</span> in <span className="font-medium">{activeTab}</span>
           </p>
         </div>
-
-
 
         {/* Regular search results */}
         <div className="space-y-4">

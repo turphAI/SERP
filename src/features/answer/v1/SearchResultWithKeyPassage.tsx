@@ -26,8 +26,8 @@ export default function SearchResultWithKeyPassage({
   snippet,
   className = ''
 }: SearchResultWithKeyPassageProps) {
-  // Check if this asset type should have the key passage treatment
-  const shouldShowKeyPassage = assetType === 'Article' || assetType === 'Page' || assetType === 'Assistant';
+  // Check if this asset type should have quotation marks and source icon
+  const shouldShowQuotes = assetType === 'Article' || assetType === 'Page' || assetType === 'Assistant';
   
   return (
     <div key={id} className={`border-b border-gray-200 pb-4 ${className}`}>
@@ -35,12 +35,19 @@ export default function SearchResultWithKeyPassage({
         {title}
       </h3>
       <p className="text-sm text-green-700 mb-1">{assetType}</p>
-      <p className="text-gray-600">
-        {shouldShowKeyPassage && (
-          <span style={{ color: '#7f7f7f' }}>Key passage: </span>
-        )}
-        {snippet}
-      </p>
+      
+      {shouldShowQuotes ? (
+        <p className="text-gray-600">
+          "{snippet}" 
+          <span className="inline-block w-4 h-4 bg-pink-500 rounded-sm ml-2 align-middle">
+            <span className="block w-2 h-2 bg-white rounded-full m-1"></span>
+          </span>
+        </p>
+      ) : (
+        <p className="text-gray-600">
+          {snippet}
+        </p>
+      )}
     </div>
   );
 }
