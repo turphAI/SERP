@@ -38,7 +38,7 @@ export default function SearchResultWithKeyPassage({
       
       {shouldShowQuotes ? (
         <p className="text-gray-600">
-          "{snippet}" 
+          &ldquo;{snippet}&rdquo; 
           <span className="inline-block w-4 h-4 bg-pink-500 rounded-sm ml-2 align-middle">
             <span className="block w-2 h-2 bg-white rounded-full m-1"></span>
           </span>
