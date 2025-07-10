@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 
 interface RelatedQuestionListBrandedProps {
   className?: string;
-  onQuestionClick?: (question: string) => void;
+  onQuestionClick?: () => void;
 }
 
 export default function RelatedQuestionListBranded({ className = '', onQuestionClick }: RelatedQuestionListBrandedProps) {
@@ -24,7 +24,7 @@ export default function RelatedQuestionListBranded({ className = '', onQuestionC
             key={index}
             variant="conversation-branded"
             className="h-auto py-3 px-4"
-            onClick={() => onQuestionClick?.(question)}
+            onClick={() => onQuestionClick?.()}
           >
             {question}
           </Button>

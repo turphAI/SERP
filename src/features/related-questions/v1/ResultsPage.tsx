@@ -29,8 +29,8 @@ export default function ResultsPage({ searchQuery }: ResultsPageProps) {
     console.log(`Tab changed to: ${tab}`);
   };
 
-  const handleQuestionClick = (question: string) => {
-    router.push(`/related-questions/v1/results?q=${encodeURIComponent(question)}`);
+  const handleQuestionClick = () => {
+    setShowChatbot(true);
   };
 
   const handleChatbotClose = () => {

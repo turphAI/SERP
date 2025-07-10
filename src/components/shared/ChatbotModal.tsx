@@ -39,7 +39,7 @@ export default function ChatbotModal({ isOpen, onClose, initialQuestion = '' }: 
         {/* Conversation Area */}
         <div className="flex-1 p-4 overflow-y-auto bg-gray-50">
           <div className="text-sm text-gray-500 text-center">
-            Conversation area - messages would appear here
+            Conversation area - Your question and its answer would appear here
           </div>
         </div>
         

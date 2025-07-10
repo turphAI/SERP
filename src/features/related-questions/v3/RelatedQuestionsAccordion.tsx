@@ -8,9 +8,10 @@ import {
 
 interface RelatedQuestionsAccordionProps {
   className?: string;
+  onQuestionClick?: () => void;
 }
 
-export default function RelatedQuestionsAccordion({ className = '' }: RelatedQuestionsAccordionProps) {
+export default function RelatedQuestionsAccordion({ className = '', onQuestionClick }: RelatedQuestionsAccordionProps) {
   const faqItems = [
     {
       id: "item-1",
@@ -45,7 +46,10 @@ export default function RelatedQuestionsAccordion({ className = '' }: RelatedQue
       <Accordion type="single" collapsible className="w-full">
         {faqItems.map((item) => (
           <AccordionItem key={item.id} value={item.id}>
-            <AccordionTrigger className="text-left">
+            <AccordionTrigger 
+              className="text-left"
+              onClick={() => onQuestionClick?.()}
+            >
               {item.question}
             </AccordionTrigger>
             <AccordionContent className="text-gray-600">

@@ -30,6 +30,10 @@ export default function ResultsPage({ searchQuery }: ResultsPageProps) {
     console.log(`Tab changed to: ${tab}`);
   };
 
+  const handleQuestionClick = () => {
+    setShowChatbot(true);
+  };
+
   const handleChatbotClose = () => {
     setShowChatbot(false);
   };
@@ -231,7 +235,7 @@ export default function ResultsPage({ searchQuery }: ResultsPageProps) {
 
         {/* Related Questions */}
         <div className="mb-6">
-          <RelatedQuestionsAccordion />
+          <RelatedQuestionsAccordion onQuestionClick={handleQuestionClick} />
         </div>
 
         {/* Regular search results */}
