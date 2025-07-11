@@ -1,4 +1,5 @@
 import React from 'react';
+import { Badge } from '@/components/ui/badge';
 
 type AssetType = 
   | 'Article'
@@ -39,9 +40,16 @@ export default function SearchResultWithKeyPassage({
       {shouldShowQuotes ? (
         <p className="text-gray-600">
           &ldquo;{snippet}&rdquo; 
-          <span className="inline-block w-4 h-4 bg-pink-500 rounded-sm ml-2 align-middle">
-            <span className="block w-2 h-2 bg-white rounded-full m-1"></span>
-          </span>
+          <Badge variant="outline" className="ml-2 align-middle gap-0.5">
+            <img 
+              src="/images/source-icon.png" 
+              alt="Source" 
+              width="16" 
+              height="16" 
+              className="inline-block"
+            />
+            Source
+          </Badge>
         </p>
       ) : (
         <p className="text-gray-600">
