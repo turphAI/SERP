@@ -9,7 +9,8 @@ export default function Home() {
       name: 'Answer',
       description: 'AI-powered answer cards that appear above search results with confidence indicators and sources.',
       versions: [
-        { version: 'v1', href: '/answer/v1', status: 'Complete', description: 'Append the phrase Key passage: to applicable results' }
+        { version: 'v1', href: '/answer/v1', status: 'Complete', description: 'Append the phrase Key passage: to applicable results' },
+        { version: 'v2', href: '/answer/v2', status: 'In Progress', description: 'Enhanced answer cards with improved layout and features' }
       ]
     },
     {
