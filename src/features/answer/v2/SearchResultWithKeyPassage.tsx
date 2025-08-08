@@ -1,5 +1,6 @@
 import React from 'react';
 import { Badge } from '@/components/ui/badge';
+import Image from 'next/image';
 
 type AssetType = 
   | 'Article'
@@ -41,11 +42,11 @@ export default function SearchResultWithKeyPassage({
         <p className="text-gray-600">
           &ldquo;{snippet}&rdquo; 
           <Badge variant="outline" className="ml-2 align-middle gap-0.5" style={{ display: 'none' }}>
-            <img 
+            <Image 
               src="/images/source-icon.png" 
               alt="Source" 
-              width="16" 
-              height="16" 
+              width={16} 
+              height={16} 
               className="inline-block"
             />
             Source

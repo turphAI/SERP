@@ -1,9 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ChevronDown, ChevronUp, ThumbsUp, ThumbsDown } from 'lucide-react';
+import { ThumbsUp, ThumbsDown } from 'lucide-react';
 
 interface SERP_AnswerProps {
   answer: string;
@@ -13,7 +12,6 @@ interface SERP_AnswerProps {
     url?: string;
   };
   isTruncated?: boolean;
-  disclosure?: string;
   onShowMore?: () => void;
   onShowLess?: () => void;
   onThumbsUp?: () => void;
@@ -25,7 +23,6 @@ export default function SERP_Answer({
   answer,
   source,
   isTruncated = false,
-  disclosure,
   onShowMore,
   onShowLess,
   onThumbsUp,
