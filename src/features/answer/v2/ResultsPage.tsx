@@ -26,156 +26,97 @@ export default function ResultsPage({ searchQuery }: ResultsPageProps) {
     console.log(`Tab changed to: ${tab}`);
   };
 
+  // Roth IRA specific mock data for this prototype
   const searchResults = [
     {
       id: 1,
-      title: "The Complete Guide to Starting Your First Budget",
+      title: "2025 Roth IRA Contribution Limits: Complete Guide",
       assetType: "Article" as const,
-      snippet: "Learn the fundamentals of budgeting including the 50/30/20 rule, tracking expenses, and setting realistic financial goals for beginners."
+      snippet: "Comprehensive guide to 2025 Roth IRA contribution limits, including income phase-out ranges, catch-up contributions for those 50+, and how to calculate your maximum contribution."
     },
     {
-      id: 2, 
-      title: "Monthly Budget Worksheet Template",
+      id: 2,
+      title: "Roth IRA Contribution Calculator",
       assetType: "Form" as const,
-      snippet: "Download our comprehensive monthly budget worksheet to track income, expenses, and savings goals with built-in calculators."
+      snippet: "Interactive calculator to determine your maximum Roth IRA contribution based on your age, income, and filing status for 2025 tax year."
     },
     {
       id: 3,
-      title: "Smart Budget Planning Assistant",
+      title: "Roth IRA Planning Assistant",
       assetType: "Assistant" as const,
-      snippet: "AI-powered assistant that helps you create personalized budgets based on your income, expenses, and financial goals with step-by-step guidance."
+      snippet: "AI-powered assistant that helps you maximize your Roth IRA contributions, plan for retirement, and navigate contribution limits based on your financial situation."
     },
     {
       id: 4,
-      title: "Budget Challenge: Track Every Expense for 30 Days",
-      assetType: "Learning Challenge" as const,
-      snippet: "Interactive 30-day challenge to build the habit of expense tracking using both digital tools and traditional methods."
+      title: "Roth IRA vs Traditional IRA: Contribution Limits Comparison",
+      assetType: "Infographic" as const,
+      snippet: "Visual comparison of contribution limits, tax benefits, and withdrawal rules between Roth and Traditional IRAs for 2025."
     },
     {
       id: 5,
-      title: "Expense Categorization Assistant",
-      assetType: "Assistant" as const,
-      snippet: "Intelligent assistant that automatically categorizes your expenses and identifies spending patterns to optimize your budget allocation."
+      title: "Income Phase-Out Ranges for Roth IRA Contributions",
+      assetType: "Page" as const,
+      snippet: "Detailed breakdown of income limits for Roth IRA contributions in 2025, including phase-out ranges for single filers, married filing jointly, and head of household."
     },
     {
       id: 6,
-      title: "Emergency Fund Planning Strategies",
-      assetType: "Page" as const,
-      snippet: "Comprehensive guide to building your emergency fund as the foundation of any budget, with tips for different income levels."
+      title: "Catch-Up Contributions: Maximizing Your Roth IRA After 50",
+      assetType: "Article" as const,
+      snippet: "Learn how to take advantage of catch-up contributions to boost your Roth IRA savings when you're 50 or older, including the additional $1,000 limit for 2025."
     },
     {
       id: 7,
-      title: "Budgeting Apps Comparison Video",
-      assetType: "Video" as const,
-      snippet: "45-minute comparison of popular budgeting apps including Mint, YNAB, EveryDollar, and PocketGuard with hands-on demonstrations."
+      title: "Roth IRA Contribution Deadline Tracker",
+      assetType: "Assistant" as const,
+      snippet: "Smart assistant that tracks contribution deadlines, monitors your progress toward the annual limit, and sends reminders to maximize your Roth IRA contributions."
     },
     {
       id: 8,
-      title: "Debt Payoff Strategy Assistant",
-      assetType: "Assistant" as const,
-      snippet: "Smart assistant that analyzes your debts and creates personalized payoff strategies using snowball or avalanche methods within your budget."
+      title: "Roth IRA Contribution Strategies for High Earners",
+      assetType: "Guide" as const,
+      snippet: "Advanced strategies for high-income earners to work around Roth IRA contribution limits, including backdoor Roth IRA conversions and alternative retirement accounts."
     },
     {
       id: 9,
-      title: "Budget Optimization Assistant",
-      assetType: "Assistant" as const,
-      snippet: "AI-powered budgeting assistant that analyzes spending patterns, suggests optimizations, and helps automate your budget tracking."
+      title: "Roth IRA vs 401(k): Contribution Limits and Benefits",
+      assetType: "Video" as const,
+      snippet: "30-minute comparison of Roth IRA and 401(k) contribution limits, tax advantages, and how to coordinate both accounts for maximum retirement savings."
     },
     {
       id: 10,
-      title: "Common Budgeting Mistakes to Avoid",
+      title: "Roth IRA Contribution Planning for Different Life Stages",
       assetType: "Article" as const,
-      snippet: "Learn about the most common budgeting pitfalls including unrealistic expectations, ignoring small expenses, and not planning for irregular costs."
+      snippet: "Age-specific strategies for Roth IRA contributions, from early career to retirement, including how contribution limits affect your long-term financial planning."
     },
     {
       id: 11,
-      title: "Savings Goal Assistant",
-      assetType: "Assistant" as const,
-      snippet: "Interactive assistant that helps you set realistic savings goals, calculate timelines, and adjust your budget to achieve financial milestones."
+      title: "Roth IRA Excess Contribution Calculator",
+      assetType: "Form" as const,
+      snippet: "Tool to calculate and resolve excess Roth IRA contributions, including penalties and correction methods for contributions that exceed annual limits."
     },
     {
       id: 12,
-      title: "Family Budget Planning Guide",
-      assetType: "Guide" as const,
-      snippet: "Complete guide to family budgeting including childcare costs, education savings, and involving kids in financial planning."
+      title: "Roth IRA Contribution Limits: Historical Trends",
+      assetType: "Infographic" as const,
+      snippet: "Visual timeline showing how Roth IRA contribution limits have changed over the years, including inflation adjustments and legislative changes."
     },
     {
       id: 13,
-      title: "Bill Negotiation Assistant",
+      title: "Roth IRA Contribution Assistant for Self-Employed",
       assetType: "Assistant" as const,
-      snippet: "AI assistant that helps you identify bills to negotiate, provides scripts and strategies, and tracks savings to update your budget."
+      snippet: "Specialized assistant for self-employed individuals to navigate Roth IRA contribution limits while also considering SEP-IRA and Solo 401(k) options."
     },
     {
       id: 14,
-      title: "Debt Snowball vs Avalanche Method",
-      assetType: "Infographic" as const,
-      snippet: "Compare debt payoff strategies within your budget framework, showing mathematical and psychological benefits of each approach."
+      title: "Roth IRA Contribution Limits: Tax Law Updates",
+      assetType: "Article" as const,
+      snippet: "Latest updates on Roth IRA contribution limits and related tax law changes, including potential legislative proposals and their impact on retirement planning."
     },
     {
       id: 15,
-      title: "Budget Variance Analysis Assistant",
-      assetType: "Assistant" as const,
-      snippet: "Smart assistant that compares your planned vs actual spending, identifies trends, and suggests budget adjustments for better accuracy."
-    },
-    {
-      id: 16,
-      title: "Budget Meal Planning Strategies",
-      assetType: "Video" as const,
-      snippet: "Comprehensive video series on reducing food costs through meal planning, bulk buying, and cooking at home while maintaining nutrition."
-    },
-    {
-      id: 17,
-      title: "Small Business Budget Planning",
-      assetType: "Webinar" as const,
-      snippet: "Expert discussion on creating budgets for small businesses including cash flow management, expense categorization, and growth planning."
-    },
-    {
-      id: 18,
-      title: "Budget Tracking Assistant",
-      assetType: "Assistant" as const,
-      snippet: "Intelligent assistant that monitors spending, sends alerts for budget overages, and provides personalized money-saving suggestions."
-    },
-    {
-      id: 19,
-      title: "Annual Budget Review and Planning",
-      assetType: "Article" as const,
-      snippet: "In-depth guide to conducting yearly budget reviews, adjusting for life changes, and setting financial goals for the coming year."
-    },
-    {
-      id: 20,
-      title: "Emergency Budget Assistant",
-      assetType: "Assistant" as const,
-      snippet: "Crisis management assistant that helps you quickly adjust your budget during unexpected financial hardships or income changes."
-    },
-    {
-      id: 21,
-      title: "Envelope Budgeting Method Guide",
-      assetType: "Guide" as const,
-      snippet: "Traditional envelope budgeting method updated for modern banking, including digital envelope systems and cash management strategies."
-    },
-    {
-      id: 22,
-      title: "Budget vs Actual Spending Challenge",
+      title: "Roth IRA Contribution Optimization Challenge",
       assetType: "Learning Challenge" as const,
-      snippet: "Real-world challenge to compare planned vs actual spending across different budget categories and improve estimation skills."
-    },
-    {
-      id: 23,
-      title: "Investment Budget Assistant",
-      assetType: "Assistant" as const,
-      snippet: "Specialized assistant that helps you allocate budget for investments, balancing risk tolerance with financial goals and timelines."
-    },
-    {
-      id: 24,
-      title: "Budget Maintenance Best Practices",
-      assetType: "Page" as const,
-      snippet: "Guidelines for keeping your budget up-to-date, handling unexpected expenses, and making seasonal adjustments to stay on track."
-    },
-    {
-      id: 25,
-      title: "College Budget Planning Assistant",
-      assetType: "Assistant" as const,
-      snippet: "Student-focused assistant that helps create budgets for tuition, textbooks, housing, and part-time income while building financial literacy."
+      snippet: "Interactive 12-week challenge to optimize your Roth IRA contributions, track progress toward annual limits, and develop consistent saving habits."
     }
   ];
 
